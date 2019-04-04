@@ -1,9 +1,9 @@
 <?php
 class Color {
 	public static $verbose = False;
-	private $red;
-	private $green;
-  private $blue;
+	public $red;
+	public $green;
+  public $blue;
 
 	function __construct( array $kwargs ) {
 		if ( isset( $kwargs['rgb'] ) ) {
