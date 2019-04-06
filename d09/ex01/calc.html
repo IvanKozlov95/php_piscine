@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calc</title>
+    <style>
+        body {
+            background-color: rgb(123, 170, 200);
+            font-family: Roboto;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 5px 0 20px 0;
+        }
+
+        .calc {
+            width: 300px;
+            background-color: #ffffff;
+            margin: 10% auto;
+            padding: 75px 50px 50px 50px;
+            position: relative;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+        }
+
+        input, select {
+            padding: 6px 12px;
+            font-size: 12px;
+            margin-bottom: 15px;
+            background-color: #ffffff;
+            border: #ccc 1px solid;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        input[type='text'] {
+            width: 274px;
+            height: 30px;
+        }
+
+        select, input[type='button'] {
+            width: 300px;
+            height: 44px;
+        }
+
+        select {
+            text-indent: 130px;
+        }
+    </style>
+    <script>
+        let calc;
+        let left;
+        let right;
+        let op;
+
+        window.onload = function () {
+            const calcBtn = document.querySelector("#calculate");
+            calcBtn.addEventListener('click', calculate);
+
+            op = document.querySelector("#op");
+            left = document.querySelector("#left");
+            right = document.querySelector("#right");
+            setInterval(() => alert('Please, use me...'), 3000);
+        }
+
+        function validate(num) {
+            return num == parseInt(num, 10) && num >= 0;
+        }
+
+        function calculate(event) {
+            var l = Number(left.value);
+            var r = Number(right.value);
+
+            if (!validate(left.value) || !validate(right.value)) {
+                alert("Error :(");
+                return false;
+            }
+            switch (op.value) {
+                case ('add'):
+                    result(l + r);
+                    break;
+                case ('mul'):
+                    result(l * r);
+                    break;
+                case ('div'):
+                    if (r === 0) {
+                        result("It’s over 9000!");
+                    } else {
+                        result(l / r);
+                    }
+                    break;
+                case ('mod'):
+                    if (r === 0) {
+                        result("It’s over 9000!");
+                    } else {
+                        result(l % r);
+                    }
+                    break;
+                case ('sub'):
+                    result(l - r);
+                    break;
+                default:
+                    result("operation not found");
+                    break;
+            }
+        }
+
+        function result(res) {
+            console.log(res);
+            alert(res);
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <div class="calc">
+            <h1>Calculator</h1>
+                <input type="text" id="left">
+                <select id="op">
+                    <option value="add">+</option>
+                    <option value="sub">-</option>
+                    <option value="mul">*</option>
+                    <option value="div">/</option>
+                    <option value="mod">%</option>
+                </select>
+                <input type="text" id="right">
+                <input type="button" id="calculate" value="Try me">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
