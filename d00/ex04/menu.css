@@ -1,0 +1,48 @@
+body {
+    background-image: url("https://cdn.wallpapersafari.com/76/93/URX4o9.jpg");
+    background-size: cover;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.menu {
+    display: inline-block;
+    height: 250px;
+    width: 200px;
+}
+
+ul.menu > li {
+    visibility: hidden;
+    font-size: 20px;
+    padding: 5px;
+}
+
+ul.menu:hover > li {
+    visibility: visible;
+}
+
+.menu.slide > li {
+    height: 0px;
+    transition-duration: .2s;
+    /* transition-timing-function: cubic-bezier(0, 1, 0.5, 1); */
+}
+
+.menu.slide:hover > li {
+    height: 20px;
+    transition-duration: .3s;
+    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+
+.menu.appear:hover > li {
+    opacity: 1;
+    transition: visibility 1s, opacity 0.5s linear;
+}
+.menu.appear > li {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 1s, opacity 0.5s linear;
+}
+
+a {
+    color: yellow;
+}
