@@ -1,0 +1,58 @@
+.reponse-dat-beach {
+    min-width: 100em;
+    min-height: 100vh;
+    margin: 0 auto;
+    min-width: 1920px;
+    /* min-height: 1080px; */
+}
+
+body {
+    background-image: url("https://wallpapercave.com/wp/8W3EQ4Z.jpg");
+    height: 100%;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: whitesmoke;
+}
+
+table {
+    border-spacing: 0px;
+}
+
+.title {
+    text-align: center;
+    font-size: 70px;
+}
+
+.periodic-table {
+    width: 80%;
+    font-family: 'Cooper Md BT', serif;
+}
+
+.element {
+    border: 1px solid #BEC8C2;
+    background-image: linear-gradient(to bottom right, #2DC16C, #03230F);
+}
+
+.element * {
+    padding: 0 3px;
+}
+
+.weight {
+    text-align: right;
+}
+
+.name {
+    text-align: center;
+    font: bold;
+}
+
+.sticker {
+    transform: rotate(20deg);
+    position: absolute;
+    z-index: -1;
+    width: 100px;
+    height: 120px;
+}
